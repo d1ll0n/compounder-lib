@@ -1,0 +1,6 @@
+src/
+scripts/
+test/
+node_modules/
+contracts/
+build/

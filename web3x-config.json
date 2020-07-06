@@ -1,0 +1,17 @@
+{
+  "outputPath": "./src/contracts",
+  "contracts": {
+    "IERC20": {
+      "source": "truffle",
+      "buildFile": "./build/contracts/IERC20.json"
+    },
+    "ICERC20": {
+      "source": "truffle",
+      "buildFile": "./build/contracts/ICERC20.json"
+    },
+    "Compounder": {
+      "source": "truffle",
+      "buildFile": "./build/contracts/Compounder.json"
+    }
+  }
+}

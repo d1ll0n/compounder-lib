@@ -1,0 +1,35 @@
+{
+  "name": "compounder-lib",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:d1ll0n/compounder",
+  "author": "<dillonkellar@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "mocha:ts": "mocha -r ts-node/register",
+    "clean:build": "rm -rf ./build",
+    "clean:ts": "rm -rf ./dist && rm -rf ./src/contracts && rm -rf ./src/abi",
+    "clean": "yarn clean:build && yarn clean:ts",
+    "copy-abi": "node ./scripts/copy-abi",
+    "build:sol": "truffle compile",
+    "build:codegen": "web3x-codegen ./web3x-config.json",
+    "build:ts": "yarn clean:ts && yarn build:codegen && yarn copy-abi && tsc",
+    "build": "yarn clean && yarn build:sol && yarn build:ts"
+  },
+  "dependencies": {
+    "@types/web3": "^1.2.2",
+    "@uniswap/sdk": "^2.0.6",
+    "bn.js": "^5.1.2",
+    "ethereumjs-util": "^7.0.2",
+    "graphql-request": "1.8.2",
+    "solc": "^0.6.10",
+    "web3": "^1.2.9",
+    "web3x": "^4.0.6"
+  },
+  "devDependencies": {
+    "truffle": "^5.1.32",
+    "typescript": "^3.9.5",
+    "web3x-codegen": "^4.0.6"
+  }
+}
